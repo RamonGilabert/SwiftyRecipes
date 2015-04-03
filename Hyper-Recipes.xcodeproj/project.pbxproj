@@ -39,7 +39,7 @@
 		F600E2761ACEF477003441E7 /* Hyper-RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hyper-RecipesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F600E27B1ACEF477003441E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyper_RecipesTests.swift; sourceTree = "<group>"; };
-		F600E2861ACEFD97003441E7 /* Swifty-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swifty-bridge.h"; sourceTree = "<group>"; };
+		F600E2871ACEFECC003441E7 /* Swifty-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swifty-bridge.h"; sourceTree = "<group>"; };
 		FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,6 @@
 				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
 				F600E2681ACEF477003441E7 /* ViewController.swift */,
 				F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */,
-				F600E2861ACEFD97003441E7 /* Swifty-bridge.h */,
 				F600E2611ACEF477003441E7 /* Supporting Files */,
 			);
 			path = "Hyper-Recipes";
@@ -114,6 +113,7 @@
 		F600E2611ACEF477003441E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F600E2871ACEFECC003441E7 /* Swifty-bridge.h */,
 				F600E26D1ACEF477003441E7 /* Images.xcassets */,
 				F600E26F1ACEF477003441E7 /* LaunchScreen.xib */,
 				F600E2621ACEF477003441E7 /* Info.plist */,
@@ -393,6 +393,7 @@
 				INFOPLIST_FILE = "Hyper-Recipes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hyper-Recipes/Swifty-bridge.h";
 			};
 			name = Debug;
 		};
@@ -404,6 +405,7 @@
 				INFOPLIST_FILE = "Hyper-Recipes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hyper-Recipes/Swifty-bridge.h";
 			};
 			name = Release;
 		};
