@@ -15,10 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
+
         initialViewController = ViewController(dataStack: self.dataStack)
+
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
+
         return true
     }
 

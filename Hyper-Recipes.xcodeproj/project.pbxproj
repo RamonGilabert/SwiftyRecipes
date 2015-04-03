@@ -14,6 +14,7 @@
 		F600E26E1ACEF477003441E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F600E26D1ACEF477003441E7 /* Images.xcassets */; };
 		F600E2711ACEF477003441E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F600E26F1ACEF477003441E7 /* LaunchScreen.xib */; };
 		F600E27D1ACEF477003441E7 /* Hyper_RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */; };
+		F63C408B1ACF0FE50026E050 /* UIFont+Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C408A1ACF0FE50026E050 /* UIFont+Recipes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F600E27B1ACEF477003441E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyper_RecipesTests.swift; sourceTree = "<group>"; };
 		F600E2871ACEFECC003441E7 /* Swifty-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swifty-bridge.h"; sourceTree = "<group>"; };
+		F63C408A1ACF0FE50026E050 /* UIFont+Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Recipes.swift"; sourceTree = "<group>"; };
 		FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
 				F600E2681ACEF477003441E7 /* ViewController.swift */,
+				F63C408A1ACF0FE50026E050 /* UIFont+Recipes.swift */,
 				F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */,
 				F600E2611ACEF477003441E7 /* Supporting Files */,
 			);
@@ -274,6 +277,7 @@
 			files = (
 				F600E2691ACEF477003441E7 /* ViewController.swift in Sources */,
 				F600E2671ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld in Sources */,
+				F63C408B1ACF0FE50026E050 /* UIFont+Recipes.swift in Sources */,
 				F600E2641ACEF477003441E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
