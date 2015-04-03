@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37E292F9-AF19-4E0F-9A15-A65178D8CFDC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hyper-Recipes</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E7213AC84414DA4D8E21A865572284E47BA308F5</key>
+		<string>https://github.com/RamonGilabert/SwiftyRecipes.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hyper-Recipes.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E7213AC84414DA4D8E21A865572284E47BA308F5</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RamonGilabert/SwiftyRecipes.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E7213AC84414DA4D8E21A865572284E47BA308F5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E7213AC84414DA4D8E21A865572284E47BA308F5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hyper-Recipes</string>
+		</dict>
+	</array>
+</dict>
+</plist>
