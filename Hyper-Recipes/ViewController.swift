@@ -1,20 +1,23 @@
 import UIKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UICollectionViewDelegate
 {
     let DNHeaderViewHeight: CGFloat = 80.0
     let DNSeparationValueTitle: CGFloat = 15.0
+
     let DNTitleString = "SWIFTY RECIPES"
+    let DNCellIdentifier = "CellID"
 
     var dataStack: DATAStack!
     var deviceWidth: CGFloat!
     var deviceHeight: CGFloat!
     var headerView: UIView!
     var titleLabel: UILabel!
+    var tableView: UITableView!
 
     // MARK: Initializers
 
-    init(dataStack: DATAStack)
+    required init(dataStack: DATAStack)
     {
         super.init(nibName: nil, bundle: nil);
         self.dataStack = dataStack
@@ -43,7 +46,23 @@ class ViewController: UIViewController
         titleLabel.textAlignment = NSTextAlignment.Center
         headerView.addSubview(titleLabel)
 
+        tableView = UITableView(frame: CGRect(x: 0, y: DNHeaderViewHeight, width: deviceWidth, height: deviceHeight - DNHeaderViewHeight))
+
         view.addSubview(headerView)
+    }
+
+    var dataSource: DATASource!
+    {
+        get {
+            if ((dataSource) != nil) {
+                return self.dataSource
+            }
+
+            var request = NSFetchRequest(entityName:"Recipes")
+            request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+
+            return DATASource(tableView: self.tableView, fetchRequest: request, cellIdentifier: DNCellIdentifier, mainContext: dataStack.mainContext)
+        }
     }
 }
 
