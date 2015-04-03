@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7841FD29079DB85A34D5895B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0D066647431AF5E29773E /* libPods.a */; };
 		F600E2641ACEF477003441E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600E2631ACEF477003441E7 /* AppDelegate.swift */; };
 		F600E2671ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */; };
 		F600E2691ACEF477003441E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600E2681ACEF477003441E7 /* ViewController.swift */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41966C6CD0982E9F57632CDE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DDC0D066647431AF5E29773E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F600E25E1ACEF477003441E7 /* Hyper-Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyper-Recipes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F600E2621ACEF477003441E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F600E2631ACEF477003441E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		F600E2761ACEF477003441E7 /* Hyper-RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hyper-RecipesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F600E27B1ACEF477003441E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyper_RecipesTests.swift; sourceTree = "<group>"; };
+		FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7841FD29079DB85A34D5895B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C5185B1F4B1DC2B92F31A9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDC0D066647431AF5E29773E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6B63ADD5A2FC2E2A6E467AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */,
+				41966C6CD0982E9F57632CDE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F600E2551ACEF477003441E7 = {
 			isa = PBXGroup;
 			children = (
 				F600E2601ACEF477003441E7 /* Hyper-Recipes */,
 				F600E2791ACEF477003441E7 /* Hyper-RecipesTests */,
 				F600E25F1ACEF477003441E7 /* Products */,
+				B6B63ADD5A2FC2E2A6E467AA /* Pods */,
+				7C5185B1F4B1DC2B92F31A9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F600E2801ACEF477003441E7 /* Build configuration list for PBXNativeTarget "Hyper-Recipes" */;
 			buildPhases = (
+				B856094CD4134F4DB2B51010 /* Check Pods Manifest.lock */,
 				F600E25A1ACEF477003441E7 /* Sources */,
 				F600E25B1ACEF477003441E7 /* Frameworks */,
 				F600E25C1ACEF477003441E7 /* Resources */,
+				4D683D38BF75C02C54EF8DC0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +231,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D683D38BF75C02C54EF8DC0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B856094CD4134F4DB2B51010 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F600E25A1ACEF477003441E7 /* Sources */ = {
@@ -326,6 +385,7 @@
 		};
 		F600E2811ACEF477003441E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hyper-Recipes/Info.plist";
@@ -336,6 +396,7 @@
 		};
 		F600E2821ACEF477003441E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41966C6CD0982E9F57632CDE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hyper-Recipes/Info.plist";
@@ -397,6 +458,7 @@
 				F600E2821ACEF477003441E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F600E2831ACEF477003441E7 /* Build configuration list for PBXNativeTarget "Hyper-RecipesTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +467,7 @@
 				F600E2851ACEF477003441E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
