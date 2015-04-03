@@ -6,10 +6,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var initialViewController: UIViewController?
+    var dataStack: DATAStack!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        initialViewController = ViewController(dataStack: self.dataStack)
         return true
     }
 
