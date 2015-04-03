@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate
+class ViewController: UITableViewController
 {
     let DNHeaderViewHeight: CGFloat = 80.0
     let DNSeparationValueTitle: CGFloat = 15.0
@@ -13,7 +13,6 @@ class ViewController: UIViewController, UICollectionViewDelegate
     var deviceHeight: CGFloat!
     var headerView: UIView!
     var titleLabel: UILabel!
-    var tableView: UITableView!
 
     // MARK: Initializers
 
