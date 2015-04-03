@@ -6,7 +6,7 @@ class ViewController: UIViewController
 
     init(dataStack: DATAStack)
     {
-        super.init()
+        super.init(nibName: nil, bundle: nil);
         self.dataStack = dataStack
     }
 
