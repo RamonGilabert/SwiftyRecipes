@@ -1,0 +1,6 @@
+framework module DATAStack {
+  umbrella header "Pods-DATAStack-umbrella.h"
+
+  export *
+  module * { export * }
+}
