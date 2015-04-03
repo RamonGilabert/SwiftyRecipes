@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F600E2641ACEF477003441E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600E2631ACEF477003441E7 /* AppDelegate.swift */; };
+		F600E2671ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */; };
+		F600E2691ACEF477003441E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600E2681ACEF477003441E7 /* ViewController.swift */; };
+		F600E26E1ACEF477003441E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F600E26D1ACEF477003441E7 /* Images.xcassets */; };
+		F600E2711ACEF477003441E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F600E26F1ACEF477003441E7 /* LaunchScreen.xib */; };
+		F600E27D1ACEF477003441E7 /* Hyper_RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F600E2771ACEF477003441E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F600E2561ACEF477003441E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F600E25D1ACEF477003441E7;
+			remoteInfo = "Hyper-Recipes";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F600E25E1ACEF477003441E7 /* Hyper-Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyper-Recipes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F600E2621ACEF477003441E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F600E2631ACEF477003441E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F600E2661ACEF477003441E7 /* Hyper_Recipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hyper_Recipes.xcdatamodel; sourceTree = "<group>"; };
+		F600E2681ACEF477003441E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F600E26D1ACEF477003441E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F600E2701ACEF477003441E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F600E2761ACEF477003441E7 /* Hyper-RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hyper-RecipesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F600E27B1ACEF477003441E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyper_RecipesTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F600E25B1ACEF477003441E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F600E2731ACEF477003441E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F600E2551ACEF477003441E7 = {
+			isa = PBXGroup;
+			children = (
+				F600E2601ACEF477003441E7 /* Hyper-Recipes */,
+				F600E2791ACEF477003441E7 /* Hyper-RecipesTests */,
+				F600E25F1ACEF477003441E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F600E25F1ACEF477003441E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F600E25E1ACEF477003441E7 /* Hyper-Recipes.app */,
+				F600E2761ACEF477003441E7 /* Hyper-RecipesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F600E2601ACEF477003441E7 /* Hyper-Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
+				F600E2681ACEF477003441E7 /* ViewController.swift */,
+				F600E26D1ACEF477003441E7 /* Images.xcassets */,
+				F600E26F1ACEF477003441E7 /* LaunchScreen.xib */,
+				F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */,
+				F600E2611ACEF477003441E7 /* Supporting Files */,
+			);
+			path = "Hyper-Recipes";
+			sourceTree = "<group>";
+		};
+		F600E2611ACEF477003441E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F600E2621ACEF477003441E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F600E2791ACEF477003441E7 /* Hyper-RecipesTests */ = {
+			isa = PBXGroup;
+			children = (
+				F600E27C1ACEF477003441E7 /* Hyper_RecipesTests.swift */,
+				F600E27A1ACEF477003441E7 /* Supporting Files */,
+			);
+			path = "Hyper-RecipesTests";
+			sourceTree = "<group>";
+		};
+		F600E27A1ACEF477003441E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F600E27B1ACEF477003441E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F600E25D1ACEF477003441E7 /* Hyper-Recipes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F600E2801ACEF477003441E7 /* Build configuration list for PBXNativeTarget "Hyper-Recipes" */;
+			buildPhases = (
+				F600E25A1ACEF477003441E7 /* Sources */,
+				F600E25B1ACEF477003441E7 /* Frameworks */,
+				F600E25C1ACEF477003441E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hyper-Recipes";
+			productName = "Hyper-Recipes";
+			productReference = F600E25E1ACEF477003441E7 /* Hyper-Recipes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F600E2751ACEF477003441E7 /* Hyper-RecipesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F600E2831ACEF477003441E7 /* Build configuration list for PBXNativeTarget "Hyper-RecipesTests" */;
+			buildPhases = (
+				F600E2721ACEF477003441E7 /* Sources */,
+				F600E2731ACEF477003441E7 /* Frameworks */,
+				F600E2741ACEF477003441E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F600E2781ACEF477003441E7 /* PBXTargetDependency */,
+			);
+			name = "Hyper-RecipesTests";
+			productName = "Hyper-RecipesTests";
+			productReference = F600E2761ACEF477003441E7 /* Hyper-RecipesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F600E2561ACEF477003441E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Ramon Gilabert";
+				TargetAttributes = {
+					F600E25D1ACEF477003441E7 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F600E2751ACEF477003441E7 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = F600E25D1ACEF477003441E7;
+					};
+				};
+			};
+			buildConfigurationList = F600E2591ACEF477003441E7 /* Build configuration list for PBXProject "Hyper-Recipes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F600E2551ACEF477003441E7;
+			productRefGroup = F600E25F1ACEF477003441E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F600E25D1ACEF477003441E7 /* Hyper-Recipes */,
+				F600E2751ACEF477003441E7 /* Hyper-RecipesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F600E25C1ACEF477003441E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F600E2711ACEF477003441E7 /* LaunchScreen.xib in Resources */,
+				F600E26E1ACEF477003441E7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F600E2741ACEF477003441E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F600E25A1ACEF477003441E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F600E2691ACEF477003441E7 /* ViewController.swift in Sources */,
+				F600E2671ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld in Sources */,
+				F600E2641ACEF477003441E7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F600E2721ACEF477003441E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F600E27D1ACEF477003441E7 /* Hyper_RecipesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F600E2781ACEF477003441E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F600E25D1ACEF477003441E7 /* Hyper-Recipes */;
+			targetProxy = F600E2771ACEF477003441E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F600E26F1ACEF477003441E7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F600E2701ACEF477003441E7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F600E27E1ACEF477003441E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F600E27F1ACEF477003441E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F600E2811ACEF477003441E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Hyper-Recipes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F600E2821ACEF477003441E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Hyper-Recipes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F600E2841ACEF477003441E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hyper-RecipesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hyper-Recipes.app/Hyper-Recipes";
+			};
+			name = Debug;
+		};
+		F600E2851ACEF477003441E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hyper-RecipesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hyper-Recipes.app/Hyper-Recipes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F600E2591ACEF477003441E7 /* Build configuration list for PBXProject "Hyper-Recipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F600E27E1ACEF477003441E7 /* Debug */,
+				F600E27F1ACEF477003441E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F600E2801ACEF477003441E7 /* Build configuration list for PBXNativeTarget "Hyper-Recipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F600E2811ACEF477003441E7 /* Debug */,
+				F600E2821ACEF477003441E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F600E2831ACEF477003441E7 /* Build configuration list for PBXNativeTarget "Hyper-RecipesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F600E2841ACEF477003441E7 /* Debug */,
+				F600E2851ACEF477003441E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F600E2661ACEF477003441E7 /* Hyper_Recipes.xcdatamodel */,
+			);
+			currentVersion = F600E2661ACEF477003441E7 /* Hyper_Recipes.xcdatamodel */;
+			path = Hyper_Recipes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F600E2561ACEF477003441E7 /* Project object */;
+}
