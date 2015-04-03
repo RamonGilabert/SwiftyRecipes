@@ -1,9 +1,6 @@
 #include "Pods-NSDictionary-ANDYSafeValue.xcconfig"
-CONFIGURATION_BUILD_DIR = $PODS_FRAMEWORK_BUILD_PATH
-FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/NSDictionary-ANDYSafeValue" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DATAFilter" "${PODS_ROOT}/Headers/Public/DATAObjectIDs" "${PODS_ROOT}/Headers/Public/DATASource" "${PODS_ROOT}/Headers/Public/DATAStack" "${PODS_ROOT}/Headers/Public/NSDictionary-ANDYSafeValue" "${PODS_ROOT}/Headers/Public/NSManagedObject-HYPPropertyMapper" "${PODS_ROOT}/Headers/Public/NSObject-HYPTesting" "${PODS_ROOT}/Headers/Public/NSString-HYPNetworking" "${PODS_ROOT}/Headers/Public/Sync"
 OTHER_LDFLAGS = ${PODS_NSDICTIONARY_ANDYSAFEVALUE_OTHER_LDFLAGS} -ObjC
-PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES

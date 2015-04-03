@@ -1,6 +1,0 @@
-framework module DATASource {
-  umbrella header "Pods-DATASource-umbrella.h"
-
-  export *
-  module * { export * }
-}

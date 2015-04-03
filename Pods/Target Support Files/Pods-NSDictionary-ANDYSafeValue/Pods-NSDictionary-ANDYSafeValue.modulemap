@@ -1,6 +1,0 @@
-framework module NSDictionary_ANDYSafeValue {
-  umbrella header "Pods-NSDictionary-ANDYSafeValue-umbrella.h"
-
-  export *
-  module * { export * }
-}
