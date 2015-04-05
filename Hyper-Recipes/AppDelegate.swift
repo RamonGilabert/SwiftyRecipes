@@ -4,32 +4,27 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    var initialViewController: UIViewController?
-    var dataStack: DATAStack!
-        {
-            get {
-                return DATAStack(modelName: "Hyper_Recipes")
-            }
-        }
+  let DNHeaderViewHeight: CGFloat = 80.0
+  let DNCellIdentifier = "CellID"
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
-    {
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+  var window: UIWindow?
+  lazy var dataStack: DATAStack = DATAStack(modelName: "Hyper_Recipes")
 
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
 
-        initialViewController = ViewController(dataStack: self.dataStack)
+    self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
-        window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
+    let initialViewController = ViewController(dataStack: self.dataStack)
 
-        return true
-    }
+    self.window!.rootViewController = initialViewController
+    self.window!.makeKeyAndVisible()
 
-    func applicationWillTerminate(application: UIApplication)
-    {
-        self.dataStack.persistWithCompletion(nil)
-    }
+    return true
+  }
+
+  func applicationWillTerminate(application: UIApplication) {
+    self.dataStack.persistWithCompletion(nil)
+  }
 }
 
