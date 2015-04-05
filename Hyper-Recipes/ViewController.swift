@@ -27,16 +27,16 @@ class ViewController: UIViewController
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: View timecycle
+    // MARK: View lifecycle
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        deviceWidth = UIScreen.mainScreen().bounds.size.width
-        deviceHeight = UIScreen.mainScreen().bounds.size.height
+        self.deviceWidth = UIScreen.mainScreen().bounds.size.width
+        self.deviceHeight = UIScreen.mainScreen().bounds.size.height
 
-        self.layoutHeaderView()
+        layoutHeaderView()
     }
 
     var dataSource: DATASource!
@@ -49,7 +49,7 @@ class ViewController: UIViewController
             var request = NSFetchRequest(entityName:"Recipes")
             request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
 
-            return DATASource(tableView: self.tableView, fetchRequest: request, cellIdentifier: DNCellIdentifier, mainContext: dataStack.mainContext)
+            return DATASource(tableView: self.tableView, fetchRequest: request, cellIdentifier: DNCellIdentifier, mainContext: self.dataStack.mainContext)
         }
     }
 
@@ -57,20 +57,20 @@ class ViewController: UIViewController
 
     func layoutHeaderView()
     {
-        headerView = UIView(frame: CGRect(x: 0, y: 0, width: deviceWidth, height: DNHeaderViewHeight))
-        headerView.backgroundColor = UIColor(red:0.87, green:0.36, blue:0.5, alpha:1)
+        self.headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.deviceWidth, height: DNHeaderViewHeight))
+        self.headerView.backgroundColor = UIColor(red:0.87, green:0.36, blue:0.5, alpha:1)
 
-        titleLabel = UILabel(frame: CGRect(x: 0, y: DNSeparationValueTitle, width: deviceWidth, height: DNHeaderViewHeight-DNSeparationValueTitle))
-        titleLabel.text = DNTitleString
-        titleLabel.textColor = UIColor.whiteColor()
-        titleLabel.font = UIFont_Recipes.headerFont()
-        titleLabel.textAlignment = NSTextAlignment.Center
+        self.titleLabel = UILabel(frame: CGRect(x: 0, y: DNSeparationValueTitle, width: self.deviceWidth, height: DNHeaderViewHeight-DNSeparationValueTitle))
+        self.titleLabel.text = DNTitleString
+        self.titleLabel.textColor = UIColor.whiteColor()
+        self.titleLabel.font = UIFont_Recipes.headerFont()
+        self.titleLabel.textAlignment = NSTextAlignment.Center
 
-        headerView.addSubview(titleLabel)
-        view.addSubview(headerView)
+        self.headerView.addSubview(self.titleLabel)
+        self.view.addSubview(self.headerView)
 
-        tableView = UITableView(frame: CGRect(x: 0, y: DNHeaderViewHeight, width: deviceWidth, height: deviceHeight - DNHeaderViewHeight))
-        view.addSubview(tableView)
+        self.tableView = UITableView(frame: CGRect(x: 0, y: DNHeaderViewHeight, width: self.deviceWidth, height: self.deviceHeight - DNHeaderViewHeight))
+        self.view.addSubview(tableView)
     }
 }
 
