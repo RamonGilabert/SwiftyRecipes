@@ -36,6 +36,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.view.backgroundColor = UIColor.whiteColor()
+
     let headerView = self.layoutManager.layoutHeader()
     self.view.addSubview(headerView)
 
@@ -69,6 +71,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, 250)
       self.collectionView!.alpha = 0.0
     }, completion: { finished in
+      detailViewController.imageView = imageView
       self.presentViewController(detailViewController, animated: false, completion: nil)
     })
   }
