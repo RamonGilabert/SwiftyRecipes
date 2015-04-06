@@ -2,6 +2,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+  let layoutManager = LayoutViews()
   var recipe: Recipes?
 
   init(recipe: Recipes) {
@@ -15,6 +16,9 @@ class DetailViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    let headerView = self.layoutManager.layoutHeader()
+    self.view.addSubview(headerView)
   }
 
 }

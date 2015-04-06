@@ -19,7 +19,6 @@
 		F6B66BFB1AD1B355004831E2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B66BFA1AD1B355004831E2 /* Networking.swift */; };
 		F6CE9E7B1AD1C3EF00C4800F /* LayoutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CE9E7A1AD1C3EF00C4800F /* LayoutViews.swift */; };
 		F6D2EF661AD2F94200744772 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2EF651AD2F94200744772 /* DetailViewController.swift */; };
-		F6D2EF681AD2FB9600744772 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2EF671AD2FB9600744772 /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		F6B66BFA1AD1B355004831E2 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F6CE9E7A1AD1C3EF00C4800F /* LayoutViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutViews.swift; sourceTree = "<group>"; };
 		F6D2EF651AD2F94200744772 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		F6D2EF671AD2FB9600744772 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +95,6 @@
 				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
 				F600E2681ACEF477003441E7 /* ViewController.swift */,
 				F6D2EF651AD2F94200744772 /* DetailViewController.swift */,
-				F6D2EF671AD2FB9600744772 /* Animations.swift */,
 				F6D2EF691AD2FBA200744772 /* Helper classes */,
 				F6BCACB41AD27A2D007FFF80 /* Model */,
 				F600E2611ACEF477003441E7 /* Supporting Files */,
@@ -249,7 +246,6 @@
 				F63C408B1ACF0FE50026E050 /* UIFont+Recipes.swift in Sources */,
 				F6D2EF661AD2F94200744772 /* DetailViewController.swift in Sources */,
 				F68713871AD28C5D003D3E2A /* Recipes.swift in Sources */,
-				F6D2EF681AD2FB9600744772 /* Animations.swift in Sources */,
 				F600E2641ACEF477003441E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
