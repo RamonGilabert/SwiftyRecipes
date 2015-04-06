@@ -53,11 +53,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
 
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    var cell = collectionView.dequeueReusableCellWithReuseIdentifier(DNCellIdentifier, forIndexPath: indexPath) as RecipesCollectionViewCell
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DNCellIdentifier, forIndexPath: indexPath) as RecipesCollectionViewCell
 
     cell.configureCell(self.arrayWithObjects[indexPath.row])
     
     return cell
+  }
+
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    let cell = self.collectionView!.cellForItemAtIndexPath(indexPath)
+    let detailViewController = DetailViewController(recipe: self.arrayWithObjects[indexPath.row])
+
+    presentViewController(detailViewController, animated: false, completion: nil)
   }
 
   // MARK: Fetching methods
