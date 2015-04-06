@@ -1,5 +1,7 @@
 import UIKit
 
+let DNSpacingCollectionView: CGFloat = 2.0
+
 class LayoutViews: NSObject {
 
   let deviceWidth = UIScreen.mainScreen().bounds.size.width
@@ -20,15 +22,18 @@ class LayoutViews: NSObject {
     return headerView
   }
 
-  func layoutCollectionView() -> UICollectionView {
+  func layoutCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) -> UICollectionView {
     let collectionViewLayout = UICollectionViewFlowLayout()
-    collectionViewLayout.itemSize = CGSizeMake(self.deviceWidth/2 - 5, self.deviceWidth/2 - 5)
+    collectionViewLayout.itemSize = CGSizeMake(self.deviceWidth/2 - DNSpacingCollectionView, self.deviceWidth/2 - DNSpacingCollectionView)
+    collectionViewLayout.minimumInteritemSpacing = DNSpacingCollectionView
+    collectionViewLayout.minimumLineSpacing = DNSpacingCollectionView*DNSpacingCollectionView
     collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.Vertical
 
     let collectionView = UICollectionView(frame: CGRectMake(0, DNHeaderViewHeight, self.deviceWidth, self.deviceHeight - DNHeaderViewHeight), collectionViewLayout: collectionViewLayout)
     collectionView.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: DNCellIdentifier)
-
     collectionView.backgroundColor = UIColor.whiteColor()
+    collectionView.delegate = delegate
+    collectionView.dataSource = dataSource
 
     return collectionView
   }

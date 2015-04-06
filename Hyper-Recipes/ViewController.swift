@@ -33,9 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let headerView = self.layoutManager.layoutHeader()
     self.view.addSubview(headerView)
 
-    self.collectionView = self.layoutManager.layoutCollectionView()
-    self.collectionView.delegate = self
-    self.collectionView.dataSource = self
+    self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self)
     self.view.addSubview(self.collectionView)
   }
 
@@ -50,8 +48,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     cell.backgroundColor = UIColor.blackColor()
     return cell
   }
-
-  // MARK: Helper methods
 
 }
 
