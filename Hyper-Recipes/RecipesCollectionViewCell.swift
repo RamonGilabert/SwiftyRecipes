@@ -28,13 +28,7 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     difficultyLabel.sizeToFit()
     difficultyLabel.frame = CGRectMake(DNSeparationLabel, self.frame.height - DNSeparationLabel - difficultyLabel.frame.height, difficultyLabel.frame.width, difficultyLabel.frame.height)
 
-    if recipe.difficulty.integerValue == 1 {
-      bottomView.backgroundColor = UIColor(red:0.6, green:0.79, blue:0.33, alpha:1)
-    } else if recipe.difficulty.integerValue == 2 {
-      bottomView.backgroundColor = UIColor(red:0.96, green:0.43, blue:0.27, alpha:1)
-    } else {
-      bottomView.backgroundColor = UIColor(red:0.93, green:0.38, blue:0.46, alpha:1)
-    }
+    bottomView.backgroundColor = difficultyViewColor(recipe.difficulty.intValue)
 
     if recipe.photo.url != nil {
       let urlPhoto = NSURL(string: recipe.photo.url!)
@@ -51,6 +45,20 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     self.addSubview(bottomLabel)
     self.addSubview(difficultyLabel)
     self.addSubview(imageView)
+  }
+
+  func difficultyViewColor(difficulty: Int32) -> UIColor {
+    var color: UIColor?
+
+    if difficulty == 1 {
+      color = UIColor(red:0.6, green:0.79, blue:0.33, alpha:1)
+    } else if difficulty == 2 {
+      color = UIColor(red:0.96, green:0.43, blue:0.27, alpha:1)
+    } else {
+      color = UIColor(red:0.93, green:0.38, blue:0.46, alpha:1)
+    }
+
+    return color!
   }
 
   func removeSubviews() {
