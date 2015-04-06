@@ -14,6 +14,7 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     let bottomView = UIView(frame: CGRectMake(0, self.frame.size.width/DNDenominatorBottomView, self.frame.size.width, self.frame.size.width - self.frame.size.width/DNDenominatorBottomView))
     let bottomLabel = UILabel(frame: CGRectMake(DNSeparationLabel, 0, bottomView.frame.size.width - DNSeparationLabel*DNTwoMultiplier, 0))
     let difficultyLabel = UILabel(frame: CGRectMake(DNSeparationLabel, 0, bottomView.frame.size.width - DNSeparationLabel*DNTwoMultiplier, 0))
+    let imageView = UIImageView(frame: CGRectMake(0, 0, self.frame.width, self.frame.height - bottomView.frame.height))
 
     bottomView.backgroundColor = UIColor.blackColor()
     bottomView.alpha = DNAlphaBottomView
@@ -29,6 +30,13 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     difficultyLabel.text = "Difficulty: \(recipe.difficulty)"
     difficultyLabel.sizeToFit()
     difficultyLabel.frame = CGRectMake(DNSeparationLabel, self.frame.height - DNSeparationLabel - difficultyLabel.frame.height, difficultyLabel.frame.width, difficultyLabel.frame.height)
+
+    let urlPhoto = NSURL(string: recipe.photo.url)
+    let urlRequest = NSURLRequest(URL: urlPhoto!)
+    NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue()) { (_, data, error) -> Void in
+      imageView.image = UIImage(data: data)
+      self.addSubview(imageView)
+    }
 
     self.addSubview(bottomView)
     self.addSubview(bottomLabel)
