@@ -10,6 +10,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   
   var dataStack: DATAStack?
   var collectionView: UICollectionView?
+  //var arrayWithObjects: Array = [Recipes]
   let layoutManager = LayoutViews()
 
   // MARK: Initializers
@@ -17,8 +18,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   required init(dataStack: DATAStack) {
     super.init(nibName: nil, bundle: nil);
 
-    let networkingManager = Networking(dataStack: dataStack)
-    networkingManager.fetchNewContent()
+    let networking = Networking(dataStack: dataStack)
+    networking.fetchNewContent { () -> Void in
+      self.collectionView!.reloadData()
+    }
 
     self.dataStack = dataStack
   }
