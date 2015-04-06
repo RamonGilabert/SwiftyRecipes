@@ -30,13 +30,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.deviceWidth = UIScreen.mainScreen().bounds.size.width
-    self.deviceHeight = UIScreen.mainScreen().bounds.size.height
-
     let headerView = self.layoutManager.layoutHeader()
     self.view.addSubview(headerView)
 
-    layoutCollectionView()
+    self.collectionView = self.layoutManager.layoutCollectionView()
+    self.collectionView.delegate = self
+    self.collectionView.dataSource = self
+    self.view.addSubview(self.collectionView)
   }
 
   // MARK: UICollectionView methods
@@ -53,19 +53,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
   // MARK: Helper methods
 
-  func layoutCollectionView() {
-    let collectionViewLayout = UICollectionViewFlowLayout()
-    collectionViewLayout.itemSize = CGSizeMake(self.deviceWidth/2 - 5, self.deviceWidth/2 - 5)
-    collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.Vertical
-
-    self.collectionView = UICollectionView(frame: CGRectMake(0, DNHeaderViewHeight, self.deviceWidth, self.deviceHeight - DNHeaderViewHeight), collectionViewLayout: collectionViewLayout)
-    self.collectionView!.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: DNCellIdentifier)
-
-    self.collectionView.backgroundColor = UIColor.whiteColor()
-    self.collectionView.delegate = self
-    self.collectionView.dataSource = self
-
-    self.view.addSubview(self.collectionView)
-  }
 }
 
