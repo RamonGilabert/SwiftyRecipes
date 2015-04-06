@@ -6,11 +6,10 @@ class Networking: NSObject {
 
   var dataStack: DATAStack?
 
-  required init(dataStack: DATAStack) {
-    self.dataStack = dataStack
+  required override init() {
   }
 
-  func fetchNewContent(completion: () -> Void) {
+  func fetchNewContent(dataStack: DATAStack, completion: () -> Void) {
     let useURL = NSURL(string: DNBaseURL)
     let requestOperation = NSURLRequest(URL: useURL!)
     NSURLConnection.sendAsynchronousRequest(requestOperation, queue: NSOperationQueue()) { (_, data, error) -> Void in
