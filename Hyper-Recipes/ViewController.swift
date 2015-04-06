@@ -53,8 +53,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
 
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    var cell = collectionView.dequeueReusableCellWithReuseIdentifier(DNCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-    cell.backgroundColor = UIColor.blackColor()
+    var cell = collectionView.dequeueReusableCellWithReuseIdentifier(DNCellIdentifier, forIndexPath: indexPath) as RecipesCollectionViewCell
+
+    let recipe = self.arrayWithObjects[indexPath.row]
+    cell.configureCell(recipe.name)
+    
     return cell
   }
 
