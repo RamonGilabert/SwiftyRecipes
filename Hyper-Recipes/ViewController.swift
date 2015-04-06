@@ -55,8 +55,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     var cell = collectionView.dequeueReusableCellWithReuseIdentifier(DNCellIdentifier, forIndexPath: indexPath) as RecipesCollectionViewCell
 
-    let recipe = self.arrayWithObjects[indexPath.row]
-    cell.configureCell(recipe.name)
+    cell.configureCell(self.arrayWithObjects[indexPath.row])
     
     return cell
   }

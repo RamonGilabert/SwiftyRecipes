@@ -12,8 +12,8 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     removeSubviews()
 
     let bottomView = UIView(frame: CGRectMake(0, self.frame.size.width/DNDenominatorBottomView, self.frame.size.width, self.frame.size.width - self.frame.size.width/DNDenominatorBottomView))
-    let bottomLabel = UILabel(frame: CGRectMake(DNSeparationLabel, bottomView.frame.origin.y, bottomView.frame.size.width - DNSeparationLabel*DNTwoMultiplier, bottomView.frame.size.height))
-    let difficultyLabel = UILabel(frame: CGRectMake(0, 0, 0, 0))
+    let bottomLabel = UILabel(frame: CGRectMake(DNSeparationLabel, 0, bottomView.frame.size.width - DNSeparationLabel*DNTwoMultiplier, 0))
+    let difficultyLabel = UILabel(frame: CGRectMake(DNSeparationLabel, 0, bottomView.frame.size.width - DNSeparationLabel*DNTwoMultiplier, 0))
 
     bottomView.backgroundColor = UIColor.blackColor()
     bottomView.alpha = DNAlphaBottomView
@@ -26,7 +26,9 @@ class RecipesCollectionViewCell: UICollectionViewCell {
 
     difficultyLabel.font = UIFont_Recipes.difficultyFont()
     difficultyLabel.textColor = UIColor.whiteColor()
-    difficultyLabel.text = "Difficulty: /()"
+    difficultyLabel.text = "Difficulty: \(recipe.difficulty)"
+    difficultyLabel.sizeToFit()
+    difficultyLabel.frame = CGRectMake(DNSeparationLabel, self.frame.height - DNSeparationLabel - difficultyLabel.frame.height, difficultyLabel.frame.width, difficultyLabel.frame.height)
 
     self.addSubview(bottomView)
     self.addSubview(bottomLabel)
