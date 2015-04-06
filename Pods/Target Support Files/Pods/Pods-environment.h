@@ -40,7 +40,7 @@
 #define COCOAPODS_POD_AVAILABLE_NSManagedObject_HYPPropertyMapper
 #define COCOAPODS_VERSION_MAJOR_NSManagedObject_HYPPropertyMapper 3
 #define COCOAPODS_VERSION_MINOR_NSManagedObject_HYPPropertyMapper 0
-#define COCOAPODS_VERSION_PATCH_NSManagedObject_HYPPropertyMapper 0
+#define COCOAPODS_VERSION_PATCH_NSManagedObject_HYPPropertyMapper 1
 
 // NSObject-HYPTesting
 #define COCOAPODS_POD_AVAILABLE_NSObject_HYPTesting
@@ -56,7 +56,7 @@
 
 // Sync
 #define COCOAPODS_POD_AVAILABLE_Sync
-#define COCOAPODS_VERSION_MAJOR_Sync 0
-#define COCOAPODS_VERSION_MINOR_Sync 7
-#define COCOAPODS_VERSION_PATCH_Sync 1
+#define COCOAPODS_VERSION_MAJOR_Sync 1
+#define COCOAPODS_VERSION_MINOR_Sync 0
+#define COCOAPODS_VERSION_PATCH_Sync 0
 

@@ -1,6 +1,5 @@
-![Hyper Sync™](https://github.com/hyperoslo/Sync/blob/master/Images/logo.png)
+![Hyper Sync™](https://raw.githubusercontent.com/hyperoslo/Sync/master/Images/logo-v2.png)
 
-[![CI Status](http://img.shields.io/travis/hyperoslo/Sync.svg?style=flat)](https://travis-ci.org/hyperoslo/Sync)
 [![Version](https://img.shields.io/cocoapods/v/Sync.svg?style=flat)](http://cocoadocs.org/docsets/Sync)
 [![License](https://img.shields.io/cocoapods/l/Sync.svg?style=flat)](http://cocoadocs.org/docsets/Sync)
 [![Platform](https://img.shields.io/cocoapods/p/Sync.svg?style=flat)](http://cocoadocs.org/docsets/Sync)
@@ -27,11 +26,11 @@ Sync eases your every day job of parsing a `JSON` response and getting it into C
 * `entityName`: Core Data's Model Entity Name (such as User, Note, Task)
 * `dataStack`: Your [DATAStack](https://github.com/3lvis/DATAStack)
 
-## Real World Example
+## Example
 
 #### Model
 
-![Model](https://github.com/hyperoslo/Sync/blob/master/Images/coredata-model.png)
+![Model](https://raw.githubusercontent.com/hyperoslo/Sync/master/Images/sync-model.png)
 
 #### JSON
 
@@ -62,13 +61,21 @@ Sync eases your every day job of parsing a `JSON` response and getting it into C
 inEntityNamed:@"User"
     dataStack:dataStack
    completion:^{
-       // Objects saved in Core Data, do something
+       // New objects have been inserted
+       // Existing objects have been updated
+       // And not found objects have been deleted
     }];
 ```
 
-[See another example here](https://github.com/hyperoslo/Sync/blob/master/Examples/AppNet/Example/Networking.m#L41).
+## More Examples
 
-**PROFIT!**
+<a href="https://github.com/hyperoslo/Sync/tree/master/Examples/AppNet">
+  <img src="https://raw.githubusercontent.com/hyperoslo/Sync/master/Images/APPNET-v2.png" />
+</a>
+
+<a href="https://github.com/hyperoslo/Sync/tree/master/Examples/DesignerNews">
+  <img src="https://raw.githubusercontent.com/hyperoslo/Sync/master/Images/DN-v3.png" />
+</a>
 
 ## Getting Started
 
@@ -80,10 +87,17 @@ inEntityNamed:@"User"
 pod 'Sync'
 ```
 
-### DATAStack
+## Requisites
 
-Replace your Core Data stack with [an instance of DATAStack](https://github.com/3lvis/DATAStack/blob/master/Demo/Demo/AppDelegate/ANDYAppDelegate.m#L19):
+### Core Data Stack
 
+Replace your Core Data stack with an instance of [DATAStack](https://github.com/3lvis/DATAStack).
+
+```objc
+self.dataStack = [[DATAStack alloc] initWithModelName:@"Demo"];
+```
+
+Then add this to your App Delegate so everything gets persisted when you quit the app.
 ```objc
 - (void)applicationWillTerminate:(UIApplication *)application
 {
@@ -91,25 +105,32 @@ Replace your Core Data stack with [an instance of DATAStack](https://github.com/
 }
 ```
 
-### NSManagedObject-HYPPropertyMapper
+### Primary key
 
-Your Core Data entities should match your backend models. Your attributes should match their JSON counterparts. For example `first_name` maps to `firstName`, `address` to `address`.
+By default Sync uses `id` from the JSON and `remoteID` from Core Data as the primary key. You can mark any attribute as primary key by adding `hyper.isPrimaryKey` and the value `YES`.
 
-There are only two exceptions to this rule:
+![Custom primary key](https://raw.githubusercontent.com/hyperoslo/Sync/master/Images/custom-primary-key-v2.png)
+
+### Attribute mapping
+
+Your attributes should match their JSON counterparts in `camelCase` notation instead of `snake_case`. For example `first_name` in the JSON maps to `firstName` in Core Data and `address` in the JSON maps to `address` in Core Data.
+
+There are two exceptions to this rule:
 
 * `id`s should match `remoteID`
+* Reserved attributes should be prefixed with the `entityName` (`type` becomes `userType`, `description` becomes `userDescription` and so on). In the JSON they don't need to change, you can keep `type` and `description` for example. A full list of reserved attributes can be found [here](https://github.com/hyperoslo/NSManagedObject-HYPPropertyMapper/blob/master/Source/NSManagedObject%2BHYPPropertyMapper.m#L265)
+
+If you want to map your Core Data attribute with a JSON attribute that has different naming, you can do by adding `hyper.remoteKey` in the user info box with the value you want to map.
+
+![Custom remote key](https://raw.githubusercontent.com/hyperoslo/Sync/master/Images/custom-remote-key-v2.png)
 
 ### Networking
 
-You are free to use any networking library or NSURLConnection.
+You are free to use any networking library.
 
-### Finally
+### Supported iOS version
 
-You are ready to go, check the [example project that uses App.net](https://github.com/hyperoslo/Sync/tree/master/Examples/AppNet) for how to use Sync.
-
-## Requirements
-
-`iOS 7 or above`, [`DATAStack Core Data stack`](https://github.com/3lvis/DATAStack)
+`iOS 7 or above`
 
 ## Components
 
@@ -117,7 +138,7 @@ You are ready to go, check the [example project that uses App.net](https://githu
 
 * [**DATAStack**](https://github.com/3lvis/DATAStack): Core Data stack and thread safe saving
 
-* [**DATAFilter**](https://github.com/3lvis/DATAFilter): Helps you purge deleted objects, internally we use it to diff inserts, updates and deletes. Also it's used for uniquing Core Data does this based on objectIDs, ANDYMapChanges uses your remote keys (such as id) for this
+* [**DATAFilter**](https://github.com/3lvis/DATAFilter): Helps you purge deleted objects, internally we use it to diff inserts, updates and deletes. Also it's used for uniquing Core Data does this based on objectIDs, DATAFilter uses your remote keys (such as id) for this
 
 * [**NSManagedObject-HYPPropertyMapper**](https://github.com/hyperoslo/NSManagedObject-HYPPropertyMapper): Maps JSON fields with their Core Data counterparts, it does most of it's job using the paradigm "_convention over configuration_"
 
