@@ -8,16 +8,18 @@ let DNCellIdentifier = "CellID"
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   
-  var dataStack: DATAStack!
-  var deviceWidth: CGFloat!
-  var deviceHeight: CGFloat!
-  var collectionView: UICollectionView!
+  var dataStack: DATAStack?
+  var collectionView: UICollectionView?
   let layoutManager = LayoutViews()
 
   // MARK: Initializers
 
   required init(dataStack: DATAStack) {
     super.init(nibName: nil, bundle: nil);
+
+    let networkingManager = Networking(dataStack: dataStack)
+    networkingManager.fetchNewContent()
+
     self.dataStack = dataStack
   }
 
@@ -34,7 +36,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     self.view.addSubview(headerView)
 
     self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self)
-    self.view.addSubview(self.collectionView)
+    self.view.addSubview(self.collectionView!)
   }
 
   // MARK: UICollectionView methods
@@ -48,6 +50,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     cell.backgroundColor = UIColor.blackColor()
     return cell
   }
-
 }
 
