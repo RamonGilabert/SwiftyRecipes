@@ -61,10 +61,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
 
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    let cell = self.collectionView!.cellForItemAtIndexPath(indexPath)
+    let cell = self.collectionView!.cellForItemAtIndexPath(indexPath) as RecipesCollectionViewCell
     let detailViewController = DetailViewController(recipe: self.arrayWithObjects[indexPath.row])
 
-    presentViewController(detailViewController, animated: false, completion: nil)
+    var imageView = UIImageView()
+
+    for view in cell.subviews {
+      if view.isKindOfClass(UIImageView().classForCoder) {
+        imageView = view as UIImageView
+        imageView.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y + DNHeaderViewHeight, view.frame.width, view.frame.height)
+        self.view.addSubview(imageView)
+      }
+    }
+
+    UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+      imageView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
+
+    }, completion: { finished in
+      self.presentViewController(detailViewController, animated: true, completion: nil)
+    })
   }
 
   // MARK: Fetching methods
