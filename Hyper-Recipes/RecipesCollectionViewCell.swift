@@ -31,16 +31,21 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     difficultyLabel.sizeToFit()
     difficultyLabel.frame = CGRectMake(DNSeparationLabel, self.frame.height - DNSeparationLabel - difficultyLabel.frame.height, difficultyLabel.frame.width, difficultyLabel.frame.height)
 
-    let urlPhoto = NSURL(string: recipe.photo.url)
-    let urlRequest = NSURLRequest(URL: urlPhoto!)
-    NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue()) { (_, data, error) -> Void in
-      imageView.image = UIImage(data: data)
-      self.addSubview(imageView)
+    if recipe.photo.url != nil {
+      let urlPhoto = NSURL(string: recipe.photo.url!)
+      let urlRequest = NSURLRequest(URL: urlPhoto!)
+      imageView.image = UIImage(named: "placeholderLoading")
+      NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue()) { (_, data, error) -> Void in
+        imageView.image = UIImage(data: data)
+      }
+    } else {
+      imageView.image = UIImage(named: "placeholder")
     }
 
     self.addSubview(bottomView)
     self.addSubview(bottomLabel)
     self.addSubview(difficultyLabel)
+    self.addSubview(imageView)
   }
 
   func removeSubviews() {

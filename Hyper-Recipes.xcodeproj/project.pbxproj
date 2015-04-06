@@ -14,9 +14,9 @@
 		F600E26E1ACEF477003441E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F600E26D1ACEF477003441E7 /* Images.xcassets */; };
 		F63C408B1ACF0FE50026E050 /* UIFont+Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C408A1ACF0FE50026E050 /* UIFont+Recipes.swift */; };
 		F68713831AD27EC8003D3E2A /* RecipesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */; };
+		F68713851AD28C5C003D3E2A /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68713841AD28C5C003D3E2A /* Photos.swift */; };
+		F68713871AD28C5D003D3E2A /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68713861AD28C5D003D3E2A /* Recipes.swift */; };
 		F6B66BFB1AD1B355004831E2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B66BFA1AD1B355004831E2 /* Networking.swift */; };
-		F6BCACB11AD278B8007FFF80 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCACB01AD278B8007FFF80 /* Photos.swift */; };
-		F6BCACB31AD278B8007FFF80 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCACB21AD278B8007FFF80 /* Recipes.swift */; };
 		F6CE9E7B1AD1C3EF00C4800F /* LayoutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CE9E7A1AD1C3EF00C4800F /* LayoutViews.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,9 +33,9 @@
 		F600E2871ACEFECC003441E7 /* Swifty-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swifty-bridge.h"; sourceTree = "<group>"; };
 		F63C408A1ACF0FE50026E050 /* UIFont+Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Recipes.swift"; sourceTree = "<group>"; };
 		F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F68713841AD28C5C003D3E2A /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		F68713861AD28C5D003D3E2A /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		F6B66BFA1AD1B355004831E2 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		F6BCACB01AD278B8007FFF80 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
-		F6BCACB21AD278B8007FFF80 /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		F6CE9E7A1AD1C3EF00C4800F /* LayoutViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutViews.swift; sourceTree = "<group>"; };
 		FC3E8A8F403F6A951E82235E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,8 +116,8 @@
 		F6BCACB41AD27A2D007FFF80 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F6BCACB21AD278B8007FFF80 /* Recipes.swift */,
-				F6BCACB01AD278B8007FFF80 /* Photos.swift */,
+				F68713861AD28C5D003D3E2A /* Recipes.swift */,
+				F68713841AD28C5C003D3E2A /* Photos.swift */,
 				F600E2651ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld */,
 			);
 			name = Model;
@@ -230,11 +230,11 @@
 				F6B66BFB1AD1B355004831E2 /* Networking.swift in Sources */,
 				F68713831AD27EC8003D3E2A /* RecipesCollectionViewCell.swift in Sources */,
 				F6CE9E7B1AD1C3EF00C4800F /* LayoutViews.swift in Sources */,
-				F6BCACB31AD278B8007FFF80 /* Recipes.swift in Sources */,
+				F68713851AD28C5C003D3E2A /* Photos.swift in Sources */,
 				F600E2671ACEF477003441E7 /* Hyper_Recipes.xcdatamodeld in Sources */,
 				F63C408B1ACF0FE50026E050 /* UIFont+Recipes.swift in Sources */,
+				F68713871AD28C5D003D3E2A /* Recipes.swift in Sources */,
 				F600E2641ACEF477003441E7 /* AppDelegate.swift in Sources */,
-				F6BCACB11AD278B8007FFF80 /* Photos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
