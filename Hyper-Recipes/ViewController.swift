@@ -10,7 +10,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   
   var dataStack: DATAStack?
   var collectionView: UICollectionView?
-  //var arrayWithObjects: Array = [Recipes]
+  var arrayWithObjects = [Recipes]()
   let layoutManager = LayoutViews()
   let networkManager = Networking()
 
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     super.init(nibName: nil, bundle: nil);
 
     self.networkManager.fetchNewContent(dataStack, completion: { () -> Void in
+      self.fetchCurrentPosts()
       self.collectionView!.reloadData()
     })
 
@@ -40,18 +41,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self)
     self.view.addSubview(self.collectionView!)
+
+    fetchCurrentPosts()
+    self.collectionView!.reloadData()
   }
 
   // MARK: UICollectionView methods
 
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return self.arrayWithObjects.count
   }
 
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     var cell = collectionView.dequeueReusableCellWithReuseIdentifier(DNCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
     cell.backgroundColor = UIColor.blackColor()
     return cell
+  }
+
+  // MARK: Fetching methods
+
+  func fetchCurrentPosts() {
+    let request = NSFetchRequest(entityName: "Recipes")
+    request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+    self.arrayWithObjects = self.dataStack!.mainContext.executeFetchRequest(request, error: nil) as Array
   }
 }
 
