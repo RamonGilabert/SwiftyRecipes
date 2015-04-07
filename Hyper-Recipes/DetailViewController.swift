@@ -42,11 +42,18 @@ class DetailViewController: UIViewController {
 
     descriptionRecipe.numberOfLines = 10
     descriptionRecipe.sizeToFit()
-    descriptionRecipe.frame = CGRectMake(20, labelTitle.frame.origin.y + labelTitle.frame.height + 10, descriptionRecipe.frame.width, descriptionRecipe.frame.height)
+    descriptionRecipe.frame = CGRectMake(20, labelTitle.frame.origin.y + labelTitle.frame.height + 7.5, descriptionRecipe.frame.width, descriptionRecipe.frame.height)
     self.view.addSubview(descriptionRecipe)
 
-    let buttonGoBack = UIButton(frame: CGRectMake(0, 0, 0, 0))
+    let buttonGoBack = UIButton(frame: CGRectMake(7.5, (headerView.frame.height - 30)/2 + 7.5, 30, 30))
+    buttonGoBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
+    buttonGoBack.addTarget(self, action: "onBackButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+    self.view.addSubview(buttonGoBack)
     
+  }
+
+  func onBackButtonPressed(sender: UIButton!) {
+    self.dismissViewControllerAnimated(false, completion: nil)
   }
 
 }
