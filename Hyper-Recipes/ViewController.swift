@@ -54,11 +54,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     super.viewDidAppear(animated)
 
     if self.imageView != nil {
-      self.collectionView!.addSubview(self.imageView)
+      self.view!.addSubview(self.imageView)
       UIView.animateWithDuration(0.6, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
         self.imageView.frame = self.frameToGo!
         self.collectionView!.alpha = 1.0
       }, completion: { finished in
+        self.imageView.removeFromSuperview()
       })
     }
   }
@@ -99,7 +100,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     for view in cell.subviews {
       if view.isKindOfClass(UIImageView().classForCoder) {
-        imageView = view as UIImageView
+        var imageViewCell = view as UIImageView
+        imageView.image = imageViewCell.image
         cell.alpha = 0.0
         var rectInSuperView = self.collectionView!.convertRect(cell.frame, toView: self.collectionView!.superview)
         imageView.frame = CGRectMake(rectInSuperView.origin.x, rectInSuperView.origin.y, view.frame.width, view.frame.height)
