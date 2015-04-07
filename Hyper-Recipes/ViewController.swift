@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   var arrayWithObjects = [Recipes]()
   let layoutManager = LayoutViews()
   let networkManager = Networking()
+  var imageView: UIImageView!
 
   // MARK: Initializers
 
@@ -48,6 +49,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     self.collectionView!.reloadData()
   }
 
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    if self.imageView != nil {
+      self.imageView.alpha = 1.0
+      self.collectionView!.alpha = 1.0
+    }
+    println(self.imageView)
+  }
+
   // MARK: UICollectionView methods
 
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,13 +75,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let cell = self.collectionView!.cellForItemAtIndexPath(indexPath) as RecipesCollectionViewCell
     let detailViewController = DetailViewController(recipe: self.arrayWithObjects[indexPath.row])
-    var imageView = getImageViewFromCell(cell)
+    self.imageView = getImageViewFromCell(cell)
     
     UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-      imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, 250)
+      self.imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, 250)
       self.collectionView!.alpha = 0.0
     }, completion: { finished in
-      detailViewController.imageView = imageView
+      detailViewController.imageView = self.imageView
       self.presentViewController(detailViewController, animated: false, completion: nil)
     })
   }

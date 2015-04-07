@@ -5,6 +5,8 @@ class DetailViewController: UIViewController {
   let layoutManager = LayoutViews()
   var recipe: Recipes?
   var imageView: UIImageView?
+  var labelTitle: UILabel!
+  var descriptionRecipe: UILabel!
 
   init(recipe: Recipes) {
     super.init(nibName: nil, bundle: nil)
@@ -24,26 +26,26 @@ class DetailViewController: UIViewController {
     self.view.addSubview(headerView)
     self.view.addSubview(self.imageView!)
 
-    let labelTitle = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
-    labelTitle.font = UIFont_Recipes.headerFontRecipes()
-    labelTitle.text = self.recipe!.name
-    labelTitle.sizeToFit()
-    labelTitle.frame = CGRectMake(20, self.imageView!.frame.height + 20 + headerView.frame.height, labelTitle.frame.width, labelTitle.frame.height)
-    self.view.addSubview(labelTitle)
+    self.labelTitle = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
+    self.labelTitle.font = UIFont_Recipes.headerFontRecipes()
+    self.labelTitle.text = self.recipe!.name
+    self.labelTitle.sizeToFit()
+    self.labelTitle.frame = CGRectMake(20, self.imageView!.frame.height + 20 + headerView.frame.height, labelTitle.frame.width, labelTitle.frame.height)
+    self.view.addSubview(self.labelTitle)
 
-    let descriptionRecipe = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 100))
-    descriptionRecipe.font = UIFont_Recipes.descriptionRecipes()
+    self.descriptionRecipe = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 100))
+    self.descriptionRecipe.font = UIFont_Recipes.descriptionRecipes()
 
     if self.recipe!.descriptionID != nil {
-      descriptionRecipe.text = self.recipe!.description
+      self.descriptionRecipe.text = self.recipe!.description
     } else {
-      descriptionRecipe.text = "There is no description here, but you know, this recipe is as awesome as the others! Put a little bit of flavour, a little bit of love, and you got it!"
+      self.descriptionRecipe.text = "There is no description here, but you know, this recipe is as awesome as the others! Put a little bit of flavour, a little bit of love, and you got it!"
     }
 
-    descriptionRecipe.numberOfLines = 10
-    descriptionRecipe.sizeToFit()
-    descriptionRecipe.frame = CGRectMake(20, labelTitle.frame.origin.y + labelTitle.frame.height + 7.5, descriptionRecipe.frame.width, descriptionRecipe.frame.height)
-    self.view.addSubview(descriptionRecipe)
+    self.descriptionRecipe.numberOfLines = 10
+    self.descriptionRecipe.sizeToFit()
+    self.descriptionRecipe.frame = CGRectMake(20, labelTitle.frame.origin.y + labelTitle.frame.height + 7.5, descriptionRecipe.frame.width, descriptionRecipe.frame.height)
+    self.view.addSubview(self.descriptionRecipe)
 
     let buttonGoBack = UIButton(frame: CGRectMake(7.5, (headerView.frame.height - 30)/2 + 7.5, 30, 30))
     buttonGoBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
@@ -53,7 +55,12 @@ class DetailViewController: UIViewController {
   }
 
   func onBackButtonPressed(sender: UIButton!) {
-    self.dismissViewControllerAnimated(false, completion: nil)
+    UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+        self.labelTitle.alpha = 0.0
+        self.descriptionRecipe.alpha = 0.0
+      }, completion: { finished in
+        self.dismissViewControllerAnimated(false, completion: nil)
+    })
   }
 
 }
