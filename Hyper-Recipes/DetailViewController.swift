@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
   }
 
   func onBackButtonPressed(sender: UIButton!) {
-    UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+    UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
         self.labelTitle.alpha = 0.0
         self.descriptionRecipe.alpha = 0.0
       }, completion: { finished in

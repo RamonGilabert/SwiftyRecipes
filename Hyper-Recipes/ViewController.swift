@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   let layoutManager = LayoutViews()
   let networkManager = Networking()
   var imageView: UIImageView!
+  var frameToGo: CGRect?
 
   // MARK: Initializers
 
@@ -51,11 +52,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+
     if self.imageView != nil {
-      self.imageView.alpha = 1.0
-      self.collectionView!.alpha = 1.0
+      self.collectionView!.addSubview(self.imageView)
+      UIView.animateWithDuration(0.6, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+        self.imageView.frame = self.frameToGo!
+        self.collectionView!.alpha = 1.0
+      }, completion: { finished in
+      })
     }
-    println(self.imageView)
   }
 
   // MARK: UICollectionView methods
@@ -82,6 +87,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       self.collectionView!.alpha = 0.0
     }, completion: { finished in
       detailViewController.imageView = self.imageView
+      cell.alpha = 1.0
       self.presentViewController(detailViewController, animated: false, completion: nil)
     })
   }
@@ -97,6 +103,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.alpha = 0.0
         var rectInSuperView = self.collectionView!.convertRect(cell.frame, toView: self.collectionView!.superview)
         imageView.frame = CGRectMake(rectInSuperView.origin.x, rectInSuperView.origin.y, view.frame.width, view.frame.height)
+        self.frameToGo = imageView.frame
         self.view.addSubview(imageView)
       }
     }
