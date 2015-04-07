@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   let layoutManager = LayoutViews()
   let networkManager = Networking()
   var imageView: UIImageView!
+  var cellSelected: UIImageView!
   var frameToGo: CGRect?
 
   // MARK: Initializers
@@ -59,6 +60,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.imageView.frame = self.frameToGo!
         self.collectionView!.alpha = 1.0
       }, completion: { finished in
+        self.cellSelected.alpha = 1.0
         self.imageView.removeFromSuperview()
       })
     }
@@ -101,8 +103,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     for view in cell.subviews {
       if view.isKindOfClass(UIImageView().classForCoder) {
         var imageViewCell = view as UIImageView
+        cellSelected = imageViewCell
         imageView.image = imageViewCell.image
         cell.alpha = 0.0
+        self.cellSelected.alpha = 0.0
         var rectInSuperView = self.collectionView!.convertRect(cell.frame, toView: self.collectionView!.superview)
         imageView.frame = CGRectMake(rectInSuperView.origin.x, rectInSuperView.origin.y, view.frame.width, view.frame.height)
         self.frameToGo = imageView.frame
