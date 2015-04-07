@@ -23,6 +23,10 @@ class DetailViewController: UIViewController {
     let headerView = self.layoutManager.layoutHeader()
     self.view.addSubview(headerView)
     self.view.addSubview(self.imageView!)
+
+    let labelTitle = UILabel(frame: CGRectMake(0, 0, 0, 0))
+    labelTitle.font = UIFont_Recipes.headerFont()
+    labelTitle.text = self.recipe!.name
   }
 
 }

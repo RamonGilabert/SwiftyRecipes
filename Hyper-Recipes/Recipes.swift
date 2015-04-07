@@ -6,6 +6,7 @@ import CoreData
 class Recipes: NSManagedObject {
 
   @NSManaged var createdAt: NSDate
+  @NSManaged var descriptionID: String
   @NSManaged var name: String
   @NSManaged var remoteID: String
   @NSManaged var updatedAt: NSDate
