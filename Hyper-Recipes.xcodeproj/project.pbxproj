@@ -97,7 +97,9 @@
 				F6D2EF651AD2F94200744772 /* DetailViewController.swift */,
 				F6D2EF691AD2FBA200744772 /* Helper classes */,
 				F6BCACB41AD27A2D007FFF80 /* Model */,
+				F632EDCD1AD45D8E003C344B /* Managers */,
 				F600E2611ACEF477003441E7 /* Supporting Files */,
+				F632EDCC1AD45D7A003C344B /* Images */,
 			);
 			path = "Hyper-Recipes";
 			sourceTree = "<group>";
@@ -106,13 +108,27 @@
 			isa = PBXGroup;
 			children = (
 				F600E2871ACEFECC003441E7 /* Swifty-bridge.h */,
-				F6CE9E7A1AD1C3EF00C4800F /* LayoutViews.swift */,
 				F63C408A1ACF0FE50026E050 /* UIFont+Recipes.swift */,
-				F600E26D1ACEF477003441E7 /* Images.xcassets */,
 				F600E26F1ACEF477003441E7 /* LaunchScreen.xib */,
 				F600E2621ACEF477003441E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F632EDCC1AD45D7A003C344B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F600E26D1ACEF477003441E7 /* Images.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F632EDCD1AD45D8E003C344B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F6CE9E7A1AD1C3EF00C4800F /* LayoutViews.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		F6BCACB41AD27A2D007FFF80 /* Model */ = {

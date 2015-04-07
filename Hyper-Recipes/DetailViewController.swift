@@ -37,12 +37,16 @@ class DetailViewController: UIViewController {
     if self.recipe!.descriptionID != nil {
       descriptionRecipe.text = self.recipe!.description
     } else {
-      descriptionRecipe.text = "There is no description here, but you know, this recipe is "
+      descriptionRecipe.text = "There is no description here, but you know, this recipe is as awesome as the others! Put a little bit of flavour, a little bit of love, and you got it!"
     }
+
     descriptionRecipe.numberOfLines = 10
     descriptionRecipe.sizeToFit()
     descriptionRecipe.frame = CGRectMake(20, labelTitle.frame.origin.y + labelTitle.frame.height + 10, descriptionRecipe.frame.width, descriptionRecipe.frame.height)
     self.view.addSubview(descriptionRecipe)
+
+    let buttonGoBack = UIButton(frame: CGRectMake(0, 0, 0, 0))
+    
   }
 
 }
