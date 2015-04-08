@@ -41,11 +41,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     self.view.backgroundColor = UIColor.whiteColor()
 
-    let headerView = self.layoutManager.layoutHeader()
-    self.view.addSubview(headerView)
+    self.layoutManager.layoutHeader(self.view)
 
-    self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self)
-    self.view.addSubview(self.collectionView!)
+    self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self, view: self.view)
 
     fetchCurrentPosts()
     self.collectionView!.reloadData()

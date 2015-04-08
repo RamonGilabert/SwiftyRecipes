@@ -7,7 +7,7 @@ class LayoutViews: NSObject {
   let deviceWidth = UIScreen.mainScreen().bounds.size.width
   let deviceHeight = UIScreen.mainScreen().bounds.size.height
 
-  func layoutHeader() -> UIView {
+  func layoutHeader(view: UIView) {
     let headerView = UIView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, DNHeaderViewHeight))
     let titleLabel = UILabel(frame: CGRectMake(0, DNSeparationValueTitle, UIScreen.mainScreen().bounds.size.width, DNHeaderViewHeight - DNSeparationValueTitle))
 
@@ -19,10 +19,10 @@ class LayoutViews: NSObject {
 
     headerView.addSubview(titleLabel)
 
-    return headerView
+    view.addSubview(headerView)
   }
 
-  func layoutCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) -> UICollectionView {
+  func layoutCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource, view: UIView) -> UICollectionView {
     let collectionViewLayout = UICollectionViewFlowLayout()
     collectionViewLayout.itemSize = CGSizeMake(self.deviceWidth/2 - DNSpacingCollectionView, self.deviceWidth/2 - DNSpacingCollectionView)
     collectionViewLayout.minimumInteritemSpacing = DNSpacingCollectionView
@@ -35,7 +35,20 @@ class LayoutViews: NSObject {
     collectionView.delegate = delegate
     collectionView.dataSource = dataSource
 
+    view.addSubview(collectionView)
+
     return collectionView
+  }
+
+  func layoutLabelInFrame(frame: CGRect, text: String, view: UIView) -> UILabel {
+    let label = UILabel(frame: CGRectMake(0, 0, 0, 0))
+//    label = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
+//    label.font = UIFont_Recipes.headerFontRecipes()
+//    label.text = text
+//    label.sizeToFit()
+//    label.frame = CGRectMake(20, self.imageView!.frame.height + 20 + headerView.frame.height, labelTitle.frame.width, labelTitle.frame.height)
+
+    return label
   }
    
 }

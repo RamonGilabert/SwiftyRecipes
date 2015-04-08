@@ -24,15 +24,15 @@ class DetailViewController: UIViewController {
 
     self.view.backgroundColor = UIColor.whiteColor()
 
-    let headerView = self.layoutManager.layoutHeader()
-    self.view.addSubview(headerView)
+    self.layoutManager.layoutHeader(self.view)
+
     self.view.addSubview(self.imageView!)
 
     self.labelTitle = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
     self.labelTitle.font = UIFont_Recipes.headerFontRecipes()
     self.labelTitle.text = self.recipe!.name
     self.labelTitle.sizeToFit()
-    self.labelTitle.frame = CGRectMake(20, self.imageView!.frame.height + 20 + headerView.frame.height, labelTitle.frame.width, labelTitle.frame.height)
+    self.labelTitle.frame = CGRectMake(20, self.imageView!.frame.height + 20 + DNHeaderViewHeight, labelTitle.frame.width, labelTitle.frame.height)
     self.view.addSubview(self.labelTitle)
 
     self.descriptionRecipe = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 100))
@@ -49,7 +49,7 @@ class DetailViewController: UIViewController {
     self.descriptionRecipe.frame = CGRectMake(20, labelTitle.frame.origin.y + labelTitle.frame.height + 7.5, descriptionRecipe.frame.width, descriptionRecipe.frame.height)
     self.view.addSubview(self.descriptionRecipe)
 
-    let buttonGoBack = UIButton(frame: CGRectMake(7.5, (headerView.frame.height - 30)/2 + 7.5, 30, 30))
+    let buttonGoBack = UIButton(frame: CGRectMake(7.5, (DNHeaderViewHeight - 30)/2 + 7.5, 30, 30))
     buttonGoBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
     buttonGoBack.addTarget(self, action: "onBackButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
     self.view.addSubview(buttonGoBack)
