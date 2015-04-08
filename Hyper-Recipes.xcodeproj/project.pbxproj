@@ -97,6 +97,7 @@
 				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
 				F600E2681ACEF477003441E7 /* ViewController.swift */,
 				F6D2EF651AD2F94200744772 /* DetailViewController.swift */,
+				F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */,
 				F632EDCD1AD45D8E003C344B /* Managers */,
 				F6D2EF691AD2FBA200744772 /* Helper classes */,
 				F6BCACB41AD27A2D007FFF80 /* Model */,
@@ -148,7 +149,6 @@
 			children = (
 				F6D879801AD5ACCE00A55512 /* Animations.swift */,
 				F6B66BFA1AD1B355004831E2 /* Networking.swift */,
-				F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */,
 			);
 			name = "Helper classes";
 			sourceTree = "<group>";
