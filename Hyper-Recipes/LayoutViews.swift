@@ -53,5 +53,13 @@ class LayoutViews: NSObject {
 
     return label
   }
-   
+
+  func layoutButton(frame: CGRect, image: UIImage, view: UIView) -> UIButton {
+    let button = UIButton(frame: frame)
+    button.setImage(image, forState: UIControlState.Normal)
+
+    view.addSubview(button)
+
+    return button
+  }
 }

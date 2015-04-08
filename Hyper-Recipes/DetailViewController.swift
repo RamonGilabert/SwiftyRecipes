@@ -1,6 +1,8 @@
 import UIKit
 
 let DNAnimationDurationBack = 0.5 as NSTimeInterval
+let DNPlaceholderDescription = "There is no description here, but you know, this recipe is as awesome as the others! Put a little bit of flavour, a little bit of love, and you got it!"
+let DNBackImage = UIImage(named: "back")
 
 class DetailViewController: UIViewController {
 
@@ -31,11 +33,8 @@ class DetailViewController: UIViewController {
     self.labelTitle = self.layoutManager.layoutLabelInYPosition(self.imageView!.frame.height + 20 + DNHeaderViewHeight, text: self.recipe!.name, font: UIFont_Recipes.headerFontRecipes(), view: self.view)
     self.descriptionRecipe = self.layoutManager.layoutLabelInYPosition(self.labelTitle.frame.origin.y + self.labelTitle.frame.height + 7.5, text: getDescriptionRecipe(), font: UIFont_Recipes.descriptionRecipes(), view: self.view)
 
-    let buttonGoBack = UIButton(frame: CGRectMake(7.5, (DNHeaderViewHeight - 30)/2 + 7.5, 30, 30))
-    buttonGoBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
+    let buttonGoBack = self.layoutManager.layoutButton(CGRectMake(7.5, (DNHeaderViewHeight - 30)/2 + 7.5, 30, 30), image: DNBackImage!, view: self.view)
     buttonGoBack.addTarget(self, action: "onBackButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-    self.view.addSubview(buttonGoBack)
-    
   }
 
   func onBackButtonPressed(sender: UIButton!) {
@@ -53,7 +52,7 @@ class DetailViewController: UIViewController {
     if self.recipe!.descriptionID != nil {
       return self.recipe!.description
     } else {
-      return "There is no description here, but you know, this recipe is as awesome as the others! Put a little bit of flavour, a little bit of love, and you got it!"
+      return DNPlaceholderDescription
     }
   }
 }
