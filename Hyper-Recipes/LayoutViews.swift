@@ -1,6 +1,7 @@
 import UIKit
 
 let DNSpacingCollectionView: CGFloat = 2.0
+let DNDefaultSpacingLabels: CGFloat = 20.0
 
 class LayoutViews: NSObject {
 
@@ -40,13 +41,14 @@ class LayoutViews: NSObject {
     return collectionView
   }
 
-  func layoutLabelInFrame(frame: CGRect, text: String, view: UIView) -> UILabel {
-    let label = UILabel(frame: CGRectMake(0, 0, 0, 0))
-//    label = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
-//    label.font = UIFont_Recipes.headerFontRecipes()
-//    label.text = text
-//    label.sizeToFit()
-//    label.frame = CGRectMake(20, self.imageView!.frame.height + 20 + headerView.frame.height, labelTitle.frame.width, labelTitle.frame.height)
+  func layoutLabelInFrame(y: CGFloat, text: String, view: UIView) -> UILabel {
+    let label = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
+    label.font = UIFont_Recipes.headerFontRecipes()
+    label.text = text
+    label.sizeToFit()
+    label.frame = CGRectMake(DNDefaultSpacingLabels, y, label.frame.width, label.frame.height)
+
+    view.addSubview(label)
 
     return label
   }

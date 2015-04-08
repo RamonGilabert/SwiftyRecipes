@@ -42,7 +42,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     self.view.backgroundColor = UIColor.whiteColor()
 
     self.layoutManager.layoutHeader(self.view)
-
     self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self, view: self.view)
 
     fetchCurrentPosts()
@@ -123,4 +122,3 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     self.arrayWithObjects = self.dataStack!.mainContext.executeFetchRequest(request, error: nil) as Array
   }
 }
-
