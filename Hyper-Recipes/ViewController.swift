@@ -84,8 +84,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let cell = self.collectionView!.cellForItemAtIndexPath(indexPath) as RecipesCollectionViewCell
     let detailViewController = DetailViewController(recipe: self.arrayWithObjects[indexPath.row])
     self.imageView = getImageViewFromCell(cell)
-    
-    UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+
+    Animations.springAnimationNormalDuration({ () -> Void in
       self.imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, 250)
       self.collectionView!.alpha = 0.0
     }, completion: { finished in

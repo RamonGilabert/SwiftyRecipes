@@ -1,5 +1,7 @@
 import UIKit
 
+let DNAnimationDurationBack = 0.5 as NSTimeInterval
+
 class DetailViewController: UIViewController {
 
   let layoutManager = LayoutViews()
@@ -55,12 +57,11 @@ class DetailViewController: UIViewController {
   }
 
   func onBackButtonPressed(sender: UIButton!) {
-    UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-        self.labelTitle.alpha = 0.0
-        self.descriptionRecipe.alpha = 0.0
-      }, completion: { finished in
-        self.dismissViewControllerAnimated(false, completion: nil)
+    Animations.springAnimationWithDuration(DNAnimationDurationBack, animations: { () -> Void in
+      self.labelTitle.alpha = 0.0
+      self.descriptionRecipe.alpha = 0.0
+    }, completion: { finished in
+      self.dismissViewControllerAnimated(false, completion: nil)
     })
   }
-
 }
