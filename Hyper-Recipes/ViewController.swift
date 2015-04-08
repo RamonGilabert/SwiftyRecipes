@@ -56,7 +56,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     if self.imageView != nil {
       self.view!.addSubview(self.imageView)
-      UIView.animateWithDuration(0.6, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+      Animations.springAnimationNormalDuration({ () -> Void in
         self.imageView.frame = self.frameToGo!
         self.collectionView!.alpha = 1.0
       }, completion: { finished in
