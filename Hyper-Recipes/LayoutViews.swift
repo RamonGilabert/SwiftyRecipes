@@ -41,10 +41,11 @@ class LayoutViews: NSObject {
     return collectionView
   }
 
-  func layoutLabelInFrame(y: CGFloat, text: String, view: UIView) -> UILabel {
+  func layoutLabelInYPosition(y: CGFloat, text: String, font: UIFont, view: UIView) -> UILabel {
     let label = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 40, 0))
-    label.font = UIFont_Recipes.headerFontRecipes()
+    label.font = font
     label.text = text
+    label.numberOfLines = 10
     label.sizeToFit()
     label.frame = CGRectMake(DNDefaultSpacingLabels, y, label.frame.width, label.frame.height)
 
