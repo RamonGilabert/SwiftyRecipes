@@ -97,7 +97,7 @@
 				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
 				F600E2681ACEF477003441E7 /* ViewController.swift */,
 				F6D2EF651AD2F94200744772 /* DetailViewController.swift */,
-				F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */,
+				F6D879861AD5BAFD00A55512 /* Custom cells */,
 				F632EDCD1AD45D8E003C344B /* Managers */,
 				F6D2EF691AD2FBA200744772 /* Helper classes */,
 				F6BCACB41AD27A2D007FFF80 /* Model */,
@@ -151,6 +151,14 @@
 				F6B66BFA1AD1B355004831E2 /* Networking.swift */,
 			);
 			name = "Helper classes";
+			sourceTree = "<group>";
+		};
+		F6D879861AD5BAFD00A55512 /* Custom cells */ = {
+			isa = PBXGroup;
+			children = (
+				F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */,
+			);
+			name = "Custom cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

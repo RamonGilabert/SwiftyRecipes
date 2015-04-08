@@ -79,29 +79,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let cell = self.collectionView!.cellForItemAtIndexPath(indexPath) as RecipesCollectionViewCell
     let detailViewController = DetailViewController(recipe: self.arrayWithObjects[indexPath.row])
-    self.imageView = getImageViewFromCell(cell)
+    self.imageView = getImageViewFromCell(cell, imageView: UIImageView())
 
     Animations.springAnimationNormalDuration({ () -> Void in
       self.imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, 250)
       self.collectionView!.alpha = 0.0
     }, completion: { finished in
       detailViewController.imageView = self.imageView
-      cell.alpha = 1.0
       self.presentViewController(detailViewController, animated: false, completion: nil)
     })
   }
 
   // MARK: Helper methods
 
-  func getImageViewFromCell(cell: RecipesCollectionViewCell) -> UIImageView {
-    var imageView = UIImageView()
-
+  func getImageViewFromCell(cell: RecipesCollectionViewCell, imageView: UIImageView) -> UIImageView {
     for view in cell.subviews {
       if view.isKindOfClass(UIImageView().classForCoder) {
         var imageViewCell = view as UIImageView
-        cellSelected = imageViewCell
+        self.cellSelected = imageViewCell
         imageView.image = imageViewCell.image
-        cell.alpha = 0.0
         self.cellSelected.alpha = 0.0
         var rectInSuperView = self.collectionView!.convertRect(cell.frame, toView: self.collectionView!.superview)
         imageView.frame = CGRectMake(rectInSuperView.origin.x, rectInSuperView.origin.y, view.frame.width, view.frame.height)
