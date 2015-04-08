@@ -2,6 +2,7 @@ import UIKit
 
 let DNHeaderViewHeight: CGFloat = 80.0
 let DNSeparationValueTitle: CGFloat = 15.0
+let DNHeightOfImage: CGFloat = 250.0
 
 let DNTitleString = "SWIFTY RECIPES"
 let DNCellIdentifier = "CellID"
@@ -14,7 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   let layoutManager = LayoutViews()
   let networkManager = Networking()
   var imageView: UIImageView!
-  var cellSelected: UIImageView!
+  var imageSelected: UIImageView!
   var frameToGo: CGRect?
 
   // MARK: Initializers
@@ -40,7 +41,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     super.viewDidLoad()
 
     self.view.backgroundColor = UIColor.whiteColor()
-
     self.layoutManager.layoutHeader(self.view)
     self.collectionView = self.layoutManager.layoutCollectionView(self, dataSource: self, view: self.view)
 
@@ -57,7 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.imageView.frame = self.frameToGo!
         self.collectionView!.alpha = 1.0
       }, completion: { finished in
-        self.cellSelected.alpha = 1.0
+        self.imageSelected.alpha = 1.0
         self.imageView.removeFromSuperview()
       })
     }
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     self.imageView = getImageViewFromCell(cell, imageView: UIImageView())
 
     Animations.springAnimationNormalDuration({ () -> Void in
-      self.imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, 250)
+      self.imageView.frame = CGRectMake(0, DNHeaderViewHeight, UIScreen.mainScreen().bounds.width, DNHeightOfImage)
       self.collectionView!.alpha = 0.0
     }, completion: { finished in
       detailViewController.imageView = self.imageView
@@ -95,11 +95,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func getImageViewFromCell(cell: RecipesCollectionViewCell, imageView: UIImageView) -> UIImageView {
     for view in cell.subviews {
       if view.isKindOfClass(UIImageView().classForCoder) {
-        var imageViewCell = view as UIImageView
-        self.cellSelected = imageViewCell
-        imageView.image = imageViewCell.image
-        self.cellSelected.alpha = 0.0
+        self.imageSelected = view as UIImageView
+        self.imageSelected.alpha = 0.0
         var rectInSuperView = self.collectionView!.convertRect(cell.frame, toView: self.collectionView!.superview)
+        imageView.image = self.imageSelected.image
         imageView.frame = CGRectMake(rectInSuperView.origin.x, rectInSuperView.origin.y, view.frame.width, view.frame.height)
         self.frameToGo = imageView.frame
         self.view.addSubview(imageView)

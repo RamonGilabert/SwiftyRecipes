@@ -1,8 +1,13 @@
 import UIKit
 
 let DNAnimationDurationBack = 0.5 as NSTimeInterval
+
 let DNPlaceholderDescription = "There is no description here, but you know, this recipe is as awesome as the others! Put a little bit of flavour, a little bit of love, and you got it!"
 let DNBackImage = UIImage(named: "back")
+
+let DNDefaultSeparation: CGFloat = 20.0
+let DNSeparationBackButton: CGFloat = 7.5
+let DNHeightAndWidthBackButton: CGFloat = 30.0
 
 class DetailViewController: UIViewController {
 
@@ -30,10 +35,10 @@ class DetailViewController: UIViewController {
 
     self.view.addSubview(self.imageView!)
 
-    self.labelTitle = self.layoutManager.layoutLabelInYPosition(self.imageView!.frame.height + 20 + DNHeaderViewHeight, text: self.recipe!.name, font: UIFont_Recipes.headerFontRecipes(), view: self.view)
+    self.labelTitle = self.layoutManager.layoutLabelInYPosition(self.imageView!.frame.height + DNDefaultSeparation + DNHeaderViewHeight, text: self.recipe!.name, font: UIFont_Recipes.headerFontRecipes(), view: self.view)
     self.descriptionRecipe = self.layoutManager.layoutLabelInYPosition(self.labelTitle.frame.origin.y + self.labelTitle.frame.height + 7.5, text: getDescriptionRecipe(), font: UIFont_Recipes.descriptionRecipes(), view: self.view)
 
-    let buttonGoBack = self.layoutManager.layoutButton(CGRectMake(7.5, (DNHeaderViewHeight - 30)/2 + 7.5, 30, 30), image: DNBackImage!, view: self.view)
+    let buttonGoBack = self.layoutManager.layoutButton(CGRectMake(DNSeparationBackButton, (DNHeaderViewHeight - DNHeightAndWidthBackButton)/2 + DNSeparationBackButton, DNHeightAndWidthBackButton, DNHeightAndWidthBackButton), image: DNBackImage!, view: self.view)
     buttonGoBack.addTarget(self, action: "onBackButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
   }
 
