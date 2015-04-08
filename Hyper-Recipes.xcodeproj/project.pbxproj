@@ -94,9 +94,7 @@
 		F600E2601ACEF477003441E7 /* Hyper-Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
-				F600E2681ACEF477003441E7 /* ViewController.swift */,
-				F6D2EF651AD2F94200744772 /* DetailViewController.swift */,
+				F6D879871AD5BCA100A55512 /* Source */,
 				F6D879861AD5BAFD00A55512 /* Custom cells */,
 				F632EDCD1AD45D8E003C344B /* Managers */,
 				F6D2EF691AD2FBA200744772 /* Helper classes */,
@@ -159,6 +157,16 @@
 				F68713821AD27EC8003D3E2A /* RecipesCollectionViewCell.swift */,
 			);
 			name = "Custom cells";
+			sourceTree = "<group>";
+		};
+		F6D879871AD5BCA100A55512 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F600E2631ACEF477003441E7 /* AppDelegate.swift */,
+				F600E2681ACEF477003441E7 /* ViewController.swift */,
+				F6D2EF651AD2F94200744772 /* DetailViewController.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
